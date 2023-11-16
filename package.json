@@ -1,6 +1,6 @@
 {
   "name": "@bevry/fs-executable",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "description": "Check if a path is executable",
   "homepage": "https://github.com/bevry/fs-executable",
   "license": "Artistic-2.0",
@@ -145,7 +145,7 @@
     }
   },
   "dependencies": {
-    "@bevry/fs-accessible": "^1.0.0",
+    "@bevry/fs-accessible": "^1.1.0",
     "editions": "^6.13.0"
   },
   "devDependencies": {
