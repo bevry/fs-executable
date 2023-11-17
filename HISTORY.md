@@ -1,5 +1,10 @@
 # History
 
+## v2.0.0 2023 November 17
+
+-   `writable` is now also the default export
+-   If `isWritable` receives an array of paths, it now returns an array of booleans
+
 ## v1.1.0 2023 November 16
 
 -   Support checking multiple paths at once

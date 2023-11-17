@@ -1,7 +1,9 @@
-import { equal } from 'assert-helpers'
+// external
+import { equal, deepEqual } from 'assert-helpers'
 import kava from 'kava'
 
-import { executable, isExecutable } from './index.js'
+// local
+import executable, { isExecutable } from './index.js'
 
 const file = 'README.md'
 const dir = '.'
@@ -11,12 +13,12 @@ kava.suite('@bevry/fs-executable', function (suite, test) {
 		;(async function () {
 			equal(await isExecutable(file), false, 'file is not executable')
 			equal(await isExecutable(dir), true, 'dir is executable')
-			equal(
-				await isExecutable([file, dir]),
-				false,
-				'file and dir are not both executable'
-			)
 			equal(await isExecutable('missing'), false, 'missing is not executable')
+			deepEqual(
+				await isExecutable([file, dir, 'missing']),
+				[false, true, false],
+				'executable combination is as expected'
+			)
 		})()
 			.then(() => done())
 			.catch((err: any) => done(err))
